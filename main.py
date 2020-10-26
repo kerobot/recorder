@@ -42,7 +42,8 @@ def main():
         print("テキストを音声化します。")
         text_to_speech = TextToSpeech(settings.text_to_speech_url, settings.apikey)
         # テキストをWAVEフォーマットのバイナリデータ化
-        wave_bynary = text_to_speech.text_to_wave_bynary(text)
+        sample = f"{text}から、固有表現を抽出します。"
+        wave_bynary = text_to_speech.text_to_wave_bynary(sample)
         # バイナリデータをWAVEファイルとして保存
         output_path = f"./output_voice_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S%f')}.wav"
         text_to_speech.save_wave_file(wave_bynary, output_path)
@@ -51,12 +52,12 @@ def main():
         print("テキストを音声化しました。")
 
         # テキストをもとに固有表現抽出
-        print("テキストから固有表現抽出します。")
+        print("テキストから固有表現を抽出します。")
         language_analysis = LanguageAnalysis(settings.language_analysis_url, settings.apikey)
         # テキストを言語解析して固有表現を抽出
         ne_list = language_analysis.named_entity_recognition(text)
         print(f"固有表現抽出の結果 : {ne_list}")
-        print("テキストから固有表現抽出しました。")
+        print("テキストから固有表現を抽出しました。")
 
         return RETURN_SUCCESS
     except:
