@@ -40,6 +40,18 @@ Python 3.6.8
 > poetry add requests
 ```
 
+```powershell
+> poetry install
+```
+
+* .env の設定
+
+* プログラムの実行
+
+```powershell
+> poetry run python main.py
+```
+
 ## docomo Developer support
 
 * 音声認識
