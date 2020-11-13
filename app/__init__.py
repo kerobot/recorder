@@ -3,5 +3,6 @@
 # from . import VoiceToText
 # from . import TextToSpeech
 # from . import LanguageAnalysis
+# from . import NamedEntityRecognition
 
 __version__ = '0.1.0'

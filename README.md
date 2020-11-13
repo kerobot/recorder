@@ -40,6 +40,7 @@ Python 3.6.8
 > poetry add numpy
 > poetry add python-dotenv
 > poetry add requests
+> poetry add ginza
 ```
 
 ## ライブラリの一括追加

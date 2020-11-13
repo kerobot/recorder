@@ -8,6 +8,7 @@ from app.record_from_voice import RecordFromVoice
 from app.voice_to_text import VoiceToText
 from app.text_to_speech import TextToSpeech
 from app.language_analysis import LanguageAnalysis
+from app.named_entity_recognition import NamedEntityRecognition
 
 RETURN_SUCCESS = 0
 RETURN_FAILURE = -1
@@ -53,9 +54,11 @@ def main():
 
         # テキストをもとに固有表現抽出
         print("テキストから固有表現を抽出します。")
-        language_analysis = LanguageAnalysis(settings.language_analysis_url, settings.apikey)
         # テキストを言語解析して固有表現を抽出
-        ne_list = language_analysis.named_entity_recognition(text)
+        # language_analysis = LanguageAnalysis(settings.language_analysis_url, settings.apikey)
+        # ne_list = language_analysis.named_entity_recognition(text)
+        named_entity_recognition = NamedEntityRecognition(settings.model_path)
+        ne_list = named_entity_recognition.text_to_ner(text)
         print(f"固有表現抽出の結果 : {ne_list}")
         print("テキストから固有表現を抽出しました。")
 

@@ -12,6 +12,7 @@ class Settings:
         self.__voice_to_text_url = os.environ.get("VOICE_TO_TEXT_URL")
         self.__text_to_speech_url = os.environ.get("TEXT_TO_SPEECH_URL")
         self.__language_analysis_url = os.environ.get("LANGUAGE_ANALYSIS_URL")
+        self.__model_path = os.environ.get("MODEL_PATH")
 
     # docomo Developer support APIキー
     @property
@@ -32,3 +33,8 @@ class Settings:
     @property
     def language_analysis_url(self):
         return self.__language_analysis_url
+
+    # spyCyモデルパス
+    @property
+    def model_path(self):
+        return self.__model_path
