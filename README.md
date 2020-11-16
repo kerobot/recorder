@@ -37,7 +37,7 @@ Python 3.6.8
 ```powershell
 > poetry add pylint
 > poetry add pyaudio
-> poetry add numpy
+> poetry add numpy==1.19.3
 > poetry add python-dotenv
 > poetry add requests
 > poetry add ginza
