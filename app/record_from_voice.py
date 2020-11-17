@@ -60,7 +60,7 @@ class RecordFromVoice:
                     # 1秒間の処理回数はサンプリングレート ÷ フレームバッファサイズ = 約47回
                     # この1秒間の処理回数に、最大録音時間を掛けたものがループ回数となる。
                     stop_count = 0
-                    for _ in range(1, int(self.RATE / self.__chunk * self.__max_record_seconds)):
+                    for _ in range(0, int(self.RATE / self.__chunk * self.__max_record_seconds)):
                         # 録音ストリームから音声を読み取る
                         word_array = self.__read_stream(stream)
                         # 読み取った音声をフレームに結合
