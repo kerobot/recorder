@@ -1,7 +1,12 @@
 __pycache__
 /venv/
+.venv
 /geckodriver.log
 /geckodriver.exe
 .env
 *.wav
 /model/
+*.egg-info/
+*.egg
+eggs/
+.eggs/
